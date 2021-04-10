@@ -10,7 +10,6 @@ public class ArgMethod {
     }
 
     public static void hello(int age) {
-
         hello("anonymous", age);
     }
 
