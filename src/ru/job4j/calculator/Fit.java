@@ -12,7 +12,7 @@ public class Fit {
     public static void main(String[] args) {
         short heightMan = 193;
         short heightWoman = 172;
-        System.out.printf("Man %s is %.2f\n",heightMan, Fit.manWeight(heightMan));
+        System.out.printf("Man %s is %.2f\n", heightMan, Fit.manWeight(heightMan));
         System.out.printf("Woman %s is %.2f\n", heightWoman, Fit.womanWeight(heightWoman));
     }
 }
