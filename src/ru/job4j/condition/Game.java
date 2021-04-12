@@ -4,7 +4,6 @@ public class Game {
 
     public static void menu(String name) {
 
-        // можно на switch переписать.
         if ("super mario".equals(name)) { /* сравниваем переменную name с "super mario" */
             System.out.println("Start - super mario");
         } else if ("tanks".equals(name)) { /* Сравнить переменную name с "tanks" */
