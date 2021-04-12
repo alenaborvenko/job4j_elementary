@@ -8,30 +8,66 @@ import static org.junit.Assert.*;
 public class ConverterTest {
 
     @Test
-    public void convertRubleToEuroTest() {
-        // массив для евро, после конвертации
-        float[] expected = {2, 2.85f, 0, 0, 12.86f};
-        // отрицательное количество рублей не может быть, если отрицательные рубли, то метод вернет 0
-        // а может вызвать исключение (IllegalArgumentException)
-        int[] rubles = {140, 200, 0, -1, 900};
-        float[] resultConvertMethod = new float[rubles.length];
-        for (int i = 0; i < rubles.length; i++) {
-            resultConvertMethod[i] = Converter.rubleToEuro(rubles[i]);
-        }
-        Assert.assertArrayEquals(expected, resultConvertMethod, 1e-2f);
+    public void whenConvert140RblThen2Euro() {
+        int ruble = 140;
+        float expected = 2f;
+        float rsl = Converter.rubleToEuro(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
     }
 
     @Test
-    public void convertRubleToDollar() {
-        // массив для долларов, после конвертации
-        float[] expected = {2.33f, 3.33f, 0, 0, 15f};
-        // отрицательное количество рублей не может быть, если отрицательные рубли, то вернется из метода 0
-        // а может вызвать исключение (IllegalArgumentException)
-        int[] rubles = {140, 200, 0, -1, 900};
-        float[] resultConvertMethod = new float[rubles.length];
-        for (int i = 0; i < rubles.length; i++) {
-            resultConvertMethod[i] = Converter.rubleToDollar(rubles[i]);
-        }
-        Assert.assertArrayEquals(expected, resultConvertMethod, 1e-2f);
+    public void whenConvert200RblThen2point85Euro() {
+        int ruble = 200;
+        float expected = 2.85f;
+        float rsl = Converter.rubleToEuro(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert0RblThen0Euro() {
+        int ruble = 0;
+        float expected = 0f;
+        float rsl = Converter.rubleToEuro(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert900RblThen12point86Euro() {
+        int ruble = 900;
+        float expected = 12.86f;
+        float rsl = Converter.rubleToEuro(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert140RblThen2point33Dlr() {
+        int ruble = 140;
+        float expected = 2.33f;
+        float rsl = Converter.rubleToDollar(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert200RblThen3point33Dlr() {
+        int ruble = 200;
+        float expected = 3.33f;
+        float rsl = Converter.rubleToDollar(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert0RblThen0Dlr() {
+        int ruble = 0;
+        float expected = 0f;
+        float rsl = Converter.rubleToDollar(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
+    }
+
+    @Test
+    public void whenConvert900RblThen15Dlr() {
+        int ruble = 900;
+        float expected = 15f;
+        float rsl = Converter.rubleToDollar(ruble);
+        Assert.assertEquals(expected, rsl, 1e-2);
     }
 }
