@@ -16,4 +16,13 @@ public class CounterTest {
         Assert.assertEquals(expected, result);
     }
 
+    @Test
+    public void whenSumEvenNumbersFrom4to38Then378() {
+        int start = 4;
+        int finish = 38;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 378;
+        Assert.assertEquals(expected, result);
+    }
+
 }
