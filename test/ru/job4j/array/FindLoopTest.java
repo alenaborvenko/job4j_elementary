@@ -30,4 +30,26 @@ public class FindLoopTest {
         int rst = FindLoop.indexOf(array, el);
         Assert.assertEquals(expected, rst);
     }
+
+    @Test
+    public void whenStart2Finish4El2Find3() {
+        int[] data = new int[] {5, 2, 10, 2, 4};
+        int el = 2;
+        int start = 2;
+        int finish = 4;
+        int result = FindLoop.indexOf(data, el, start, finish);
+        int expected = 3;
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void whenStart4Finish6El9ThenMinus1() {
+        int[] data = new int[] {5, 2, 10, 2, 4, 12, 7, 9};
+        int el = 9;
+        int start = 4;
+        int finish = 6;
+        int result = FindLoop.indexOf(data, el, start, finish);
+        int expected = -1;
+        Assert.assertEquals(expected, result);
+    }
 }
