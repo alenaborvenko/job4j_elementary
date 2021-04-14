@@ -48,4 +48,19 @@ public class MatrixCheck {
         }
         return rsl;
     }
+
+    /**
+     * выиграшная комбинация для игры сокобан. (либо в строке либо в столбце все 'X')
+     */
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        char[] diagonal = extractDiagonal(board);
+        for (int i = 0; i < 5; i++) {
+            if (diagonal[i] == 'X' && (monoHorizontal(board, i) || monoVertical(board, i))) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
 }
