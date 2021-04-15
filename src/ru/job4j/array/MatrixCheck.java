@@ -57,22 +57,12 @@ public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = false;
         char[] diagonal = extractDiagonal(board);
-        for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < 5; i++) {
             if (diagonal[i] == 'X' && (monoHorizontal(board, i) || monoVertical(board, i))) {
                 result = true;
                 break;
             }
         }
         return result;
-    }
-
-    public static int[][] swap(int[][] data, int src, int dst) {
-        int tmp;
-        for (int i = 0; i < data[src].length; i++) {
-            tmp = data[dst][i];
-            data[dst][i] = data[src][i];
-            data[src][i] = tmp;
-        }
-        return data;
     }
 }
