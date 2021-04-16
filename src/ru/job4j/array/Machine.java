@@ -27,7 +27,6 @@ public class Machine {
         int change = money - price;
         int countCoins = 0;
         while (change > 0) {
-            // можно переписать на цикл for
             while (change >= coins[countCoins]) {
                 rsl[size++] = coins[countCoins];
                 change -= coins[countCoins];

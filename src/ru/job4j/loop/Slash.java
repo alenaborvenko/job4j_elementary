@@ -1,12 +1,16 @@
 package ru.job4j.loop;
 
 public class Slash {
-
+    /**Рисуем крестик из 0
+     * left = row == cell; левая диагональ (нисходящая)
+     * right = row + cell == size - 1;  правая диагональ (восходящая)
+     * @param size - размер
+     */
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
-                boolean left = row == cell; /* левая диагональ (нисходящая) */
-                boolean right = row + cell == size - 1; /* правая диагональ (восходящая) */
+                boolean left = row == cell;
+                boolean right = row + cell == size - 1;
                 if (left) {
                     System.out.print("0");
                 } else if (right) {
